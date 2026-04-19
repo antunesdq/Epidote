@@ -1,1 +1,0 @@
-"""Epidote application package."""
