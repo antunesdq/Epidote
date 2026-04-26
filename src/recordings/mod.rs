@@ -1,3 +1,7 @@
+// Retired top-level page — preserved here for Phase 3, when recording becomes
+// the live state of a meeting.
+#![allow(dead_code)]
+
 use eframe::egui::{
     self, pos2, vec2, Align, Align2, Color32, FontId, Layout, Rect, RichText, Sense, Stroke,
     StrokeKind, Ui, UiBuilder, Vec2,

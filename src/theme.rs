@@ -12,3 +12,11 @@ pub const PRIMARY_SOFT: Color32 = Color32::from_rgb(0x60, 0xff, 0x99);
 pub const BUTTON_TEXT: Color32 = Color32::from_rgb(0x00, 0x21, 0x0c);
 pub const OUTLINE_VARIANT: Color32 = Color32::from_rgb(0x2a, 0x33, 0x2c);
 pub const OUTLINE: Color32 = Color32::from_rgb(0x3b, 0x4b, 0x3d);
+
+/// Softer than `DIM_TEXT` — used for body-secondary text where `DIM_TEXT`
+/// (which is the muted/quietest tier) feels too far away from `TEXT`.
+pub const SOFT_TEXT: Color32 = Color32::from_rgb(0x8a, 0x8f, 0x8b);
+
+pub const ACCENT_PURPLE: Color32 = Color32::from_rgb(0xce, 0xbd, 0xff);
+pub const ACCENT_AMBER: Color32 = Color32::from_rgb(0xff, 0xd5, 0x8a);
+pub const ERROR: Color32 = Color32::from_rgb(0xff, 0xb4, 0xab);

@@ -7,52 +7,46 @@ use crate::{fonts, icons, theme};
 #[derive(Default, PartialEq, Clone, Copy)]
 pub enum Nav {
     #[default]
-    Recordings,
+    Today,
     Meetings,
     Tasks,
+    Proposals,
     Vault,
-    Graph,
     Calendar,
-    Integrations,
     Settings,
 }
 
 impl Nav {
     pub fn label(self) -> &'static str {
         match self {
-            Nav::Recordings => "Recordings",
+            Nav::Today => "Today",
             Nav::Meetings => "Meetings",
             Nav::Tasks => "Tasks",
+            Nav::Proposals => "Proposals",
             Nav::Vault => "Vault",
-            Nav::Graph => "Graph",
             Nav::Calendar => "Calendar",
-            Nav::Integrations => "Integrations",
             Nav::Settings => "Settings",
         }
     }
 
     fn glyph(self) -> &'static str {
         match self {
-            Nav::Recordings => icons::MIC,
-            Nav::Meetings => icons::GROUPS,
+            Nav::Today => icons::TODAY,
+            Nav::Meetings => icons::GRAPHIC_EQ,
             Nav::Tasks => icons::CHECK_CIRCLE,
-            Nav::Vault => icons::LOCK,
-            Nav::Graph => icons::ACCOUNT_TREE,
-            Nav::Calendar => icons::CALENDAR_TODAY,
-            Nav::Integrations => icons::EXTENSION,
+            Nav::Proposals => icons::AUTO_AWESOME,
+            Nav::Vault => icons::HUB,
+            Nav::Calendar => icons::CALENDAR_MONTH,
             Nav::Settings => icons::SETTINGS,
         }
     }
 
-    /// Label for the bottom-of-rail creation button. `None` hides the button
-    /// entirely — only Settings shows at the bottom for those screens.
+    /// CTA shown at the bottom of the rail. The reference design uses a single
+    /// "Record meeting" button across pages.
     fn cta(self) -> Option<&'static str> {
         match self {
-            Nav::Recordings => Some("Record New"),
-            Nav::Calendar => Some("Add Event"),
-            Nav::Tasks => Some("Add Task"),
-            Nav::Vault => Some("Add Entry"),
-            Nav::Meetings | Nav::Graph | Nav::Integrations | Nav::Settings => None,
+            Nav::Settings => None,
+            _ => Some("Record meeting"),
         }
     }
 }
@@ -62,13 +56,12 @@ pub fn show(ui: &mut Ui, selected: &mut Nav, collapsed: &mut bool) {
     ui.add_space(16.0);
 
     for nav in [
-        Nav::Recordings,
+        Nav::Today,
         Nav::Meetings,
         Nav::Tasks,
+        Nav::Proposals,
         Nav::Vault,
-        Nav::Graph,
         Nav::Calendar,
-        Nav::Integrations,
     ] {
         nav_item(ui, nav, selected);
         ui.add_space(2.0);

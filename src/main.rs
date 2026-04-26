@@ -12,8 +12,11 @@ mod integrations;
 mod login;
 mod meetings;
 mod menu;
+mod proposals;
 mod settings;
+mod store;
 mod tasks;
+mod today;
 mod upper_bar;
 mod vault;
 

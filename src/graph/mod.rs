@@ -1,3 +1,9 @@
+// Reused as a Vault subview (Phase 4). Some helpers stay only for the
+// previous standalone-page layout (filter sidebar, view controls); the dead
+// code attribute keeps those quiet without removing them in case the
+// standalone page ever returns.
+#![allow(dead_code)]
+
 use std::path::PathBuf;
 
 use eframe::egui::{
